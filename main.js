@@ -19,6 +19,7 @@ const morse = {
   l: ".-.. ",
   m: "-- ",
   n: "-. ",
+  ñ: "--.--",
   o: "--- ",
   p: ".--. ",
   q: "--.- ",
@@ -94,7 +95,17 @@ const binario = {
   w: "01110111 ",
   x: "01111000 ",
   y: "01111001 ",
-  z: "01111010 "
+  z: "01111010 ",
+  1: "00110001 ",
+  2: "00110010 ",
+  3: "00110011 ", 
+  4: "00110100 ",
+  5: "00110101 ",
+  6: "00110110 ",
+  7: "00110111 ",
+  8: "00111000 ",
+  9: "00111001 ",
+  0: "00110000"
 };
 
 //Traducir
@@ -102,13 +113,20 @@ const binario = {
 boton.addEventListener('click', event => {
   let texto = document.querySelector('#textT').value;
   let opcion = document.querySelector('#op').value;
+  let letra = "";
   console.log(opcion);
   if(opcion == "Binario"){
     for(i = 0; i < texto.length; i++){
       if(texto[i] == " "){
         textArea.innerHTML += "  ";
       }else{
-        textArea.innerHTML += binario[texto[i]];
+        letra = binario[texto[i]];
+        console.log(letra)
+        if (letra == undefined){
+          textArea.innerHTML += texto[i];
+        }else{
+          textArea.innerHTML += binario[texto[i]]
+        };
       };
     };
   }else if(opcion == "morse"){
@@ -117,7 +135,12 @@ boton.addEventListener('click', event => {
       if(texto[i] == " "){
         textArea.innerHTML += "  ";
       }else{
-        textArea.innerHTML += morse[texto[i]];
+        letra = binario[texto[i]];
+        if(letra == undefined){
+          textArea.innerHTML += texto[i]; 
+        }else{
+          textArea.innerHTML += letra;
+        };
       };
     };
   }else{
