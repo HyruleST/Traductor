@@ -135,7 +135,7 @@ boton.addEventListener('click', event => {
       if(texto[i] == " "){
         textArea.innerHTML += "  ";
       }else{
-        letra = binario[texto[i]];
+        letra = morse[texto[i]];
         if(letra == undefined){
           textArea.innerHTML += texto[i]; 
         }else{
