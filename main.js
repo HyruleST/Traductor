@@ -2,6 +2,10 @@ let insta = document.querySelector('#insta');
 let github = document.querySelector('#git');
 let boton = document.querySelector('#accion');
 let textArea = document.querySelector('#textDe');
+let mode = document.querySelector('#mode');
+let cuerpo = document.body;
+let Stmode = true;
+
 
 //Diccionarios
 const morse = {
@@ -168,7 +172,28 @@ boton.addEventListener('click', event => {
   };
 });
 
-
+//mode
+mode.addEventListener('click', event => {
+  let modeSerius = cuerpo.classList.toggle("light");
+  localStorage.setItem("modo",modeSerius);
+  if(Stmode == true){
+    mode.innerHTML = "dark_mode";
+    Stmode = false;
+  }else{
+    mode.innerHTML = "light_mode";
+    Stmode = true;
+  };  
+});
+let modeValor = localStorage.getItem("modo")
+if(modeValor == "true"){
+  cuerpo.classList.add("light")
+  mode.innerHTML = "light_mode";
+  Stmode = true;
+}else{
+  cuerpo.classList.remove("light")
+  mode.innerHTML = "dark_mode";
+  Stmode = false;
+};
 //Redes 
 
 insta.addEventListener('click', event => window.location.href = "https://www.instagram.com/_linux_user_/");

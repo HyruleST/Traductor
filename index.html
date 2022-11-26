@@ -8,28 +8,30 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<body>
+<body class = "light">
   <div class = "main">
-    <h1>Traductor</h1>
+    <h1 id = "title">Traductor</h1>
     <div class ="inputs">
-      <input type="text" id = "textT" placeholder = "Texto a Traducir" pattern = "[a-zA-Z]+">
-      <select id = "op" name = "opcion">
+      <input type="text" id = "textT" placeholder = "Texto a Traducir"  class="textArea">
+      <select id = "op" name = "opcion" class="textArea">
         <option value="morse">Morse</option>
         <option value = "Binario">Binarios</option>
       </select>
     </div>
-    <textarea id = "textDe"></textarea>
+    <textarea id = "textDe" class="textArea"></textarea>
     <button id = "accion">Traducir</button>
   </div>
   <hr>
   <footer>
-    <p>&copy;Esteban2022</p>
+    <i class="fa-solid fa-moon"></i>
     <div class = "redes">
       <i  id = "insta" class="fa-brands fa-instagram"></i>
       <i  id ="git" class="fa-brands fa-github"></i>
     </div>
+    <p>&copy;Esteban2022</p>
   </footer>   
 <script src = "https://kit.fontawesome.com/ee9ca241a9.js" crossorigin="anonymous"></script>
 <script src = "./main.js"></script>
